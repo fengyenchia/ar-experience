@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Sans+JP&family=Mozilla+Headline:wght@200..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* "Google Sans Code", "IBM Plex Sans JP", "Mozilla Headline", "Ubuntu", "Noto Sans" */
+
+:root {
+    --dark-black: #060606;
+    --light-black: #2b2b2b;
+    --dark-gray: #a0a0a0;
+    --light-gray: #f9f9f9;
+    --dark-blue: #586f7c;
+    --light-blue: #a8d0d8;
+    --primary-color1: #ffc759;
+    --primary-color2: #f45b69;
+    --primary-color3: #7adaa5;
+    --primary-color4: #b771e5;
+    --primary-color5: #9a7e6f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    font-family: "Noto Sans", "Ubuntu", "IBM Plex Sans JP";
+    color: white;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Mozilla Headline", "Ubuntu", "IBM Plex Sans JP";
+    line-height: 1.4;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+::selection {
+	background: var(--light-black);
+	color: white;
+}
+::-moz-selection {
+	background: var(--light-black);
+	color: white;
+}
+
+/* intro-container */
+.hidden {
+    display: none !important;
+}
+
+.intro .intro-container {
+    background-color: var(--dark-black);
+    z-index: 100;
+}
+
+.intro-page .intro-page-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-page .intro-page-text-h3 {
+    position: fixed;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-page .intro-page-button {
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom:12%;
+    transform: translate(-50%, 50%);
+    background-color: var(--light-black);
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 23%;
+    font-family: "Google Sans Code";
+    transition: 0.3s ease;
+}
+
+.intro-page .intro-page-button:active {
+    color: var(--primary-color2);
+}
+
+/* Bootstrap Modal */
+.modal-backdrop {
+    z-index: 30;
+}
+
+.modal {
+    z-index: 31;
+}
+
+.selection-box {
+    background-color: var(--dark-black);
+}
+
+.selection-text {
+    background-color: var(--light-black);
+    color: white;
+}
+
+.btn-three-theme {
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-three-theme:hover {
+    background-color: white;
+    color: var(--light-black);
+}
+
+/* --- AR-scanning --- */
+#scan-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#ar-filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 11;
+    opacity: 0.3;
+}
+
+#switch-filter-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+    border: 2px solid var(--dark-black);
+    font-weight: 600;
+    font-family: "Noto Sans", "Google Sans Code";
+}
+
+#switch-filter-button:hover {
+    background-color: var(--dark-black);
+    color: white;
+}
+
+/* --- content-player --- */
+#content-player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--dark-black);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #reward-content {
+    max-width: 100vh;
+    max-height: 100%;
+} */
+
+#audio-visualizer i {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+#close-content-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 0 5px var(--dark-black);
+    z-index: 13;
+}
+
+/* A-Frame AR 場景 */
+#ar-scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+/* MindAR UI Overlay */
+
+/* .mindar-ui-overlay {
+    position: absolute;
+    z-index: 999;
+} */
