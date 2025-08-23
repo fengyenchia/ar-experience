@@ -111,7 +111,7 @@ h1, h2, h3, h4 {
     border: 2px solid white;
 }
 
-.btn-three-theme:active {
+.btn-three-theme:hover {
     background-color: white !important;
     color: var(--light-black) !important;
 }
