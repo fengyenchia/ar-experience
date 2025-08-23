@@ -18,7 +18,7 @@
 
     <!-- 開發版 -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/dist/mindar-image.aframe.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.3.0/dist/mindar-image-aframe.prod.js"></script>
 </head>
 
 <body>
@@ -35,10 +35,10 @@
 
                     <button class="intro-page-button border-0" id="next-page-btn">Enter</button>
                 </div>
-                <div class="intro-page hidden col w-100" id="intro-page-1">
+                <div class="intro-page hidden col w-100" id="intro-page-2">
                     <div class="intro-page-content">
                         <img class="computer img-fluid" src="assets/images/computer.svg" alt="Computer">
-                        <div class="intro-page-text p-5 w-100 text-center" id="intro-page-1">
+                        <div class="intro-page-text p-5 w-100 text-center" id="intro-page-2">
                             <h3 class="intro-page-text-h3 w-100 pb-5">在資訊過曝的世界中<br>重要真相往往被層層堆疊</h3>
                             <p class="intro-page-text-p mt-3 px-2">
                                 它們真實存在，卻被無數個虛假信號所包圍。要找到它們，你不能只依賴肉眼，須同時啟用「數位掃描儀」進行深度挖掘。</p>
@@ -46,10 +46,10 @@
                     </div>
                     <button class="intro-page-button border-0" id="next-page-btn">Next</button>
                 </div>
-                <div class="intro-page hidden col w-100" id="intro-page-2">
+                <div class="intro-page hidden col w-100" id="intro-page-3">
                     <div class="intro-page-content">
                         <img class="computer w-100" src="assets/images/computer.svg" alt="Computer">
-                        <div class="intro-page-text p-5 w-100 text-center" id="intro-page-1">
+                        <div class="intro-page-text p-5 w-100 text-center" id="intro-page-3">
                             <h3 class="intro-page-text-h3 w-100 pb-5">我們邀請你成為一位「檔案員」<br>進入這個混亂的檔案室裡</h3>
                             <p class="intro-page-text-p mt-3 px-2">
                                 只有同時掌握物理和數位兩種聚焦能力的人，才能穿透阻礙，解鎖那些被層層加密的檔案，讓隱藏的訊息清晰地顯現出來。</p>
@@ -109,31 +109,28 @@
         </section>
 
         <!-- 5. A-Frame AR 場景 -->
-        <a-scene id="ar-scene" mindar-image="imageTargetSrc: ./targets.mind; autoStart: false;" 
-            color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        <a-scene id="ar-scene" mindar-image="imageTargetSrc: ./targets.mind;" 
+            color-space="sRGB"
+            renderer="colorManagement: true, physicallyCorrectLights" 
+            vr-mode-ui="enabled: false"
             device-orientation-permission-ui="enabled: false">
-
             <!-- 預先載入 -->
             <a-assets>
-                <img  src="content/red-1.jpg">
+                <img src="content/red-1.jpg">
                 <img src="content/green-2.png">
                 <!-- <video src="content/blue-1.mp4" autoplay muted loop playsinline></video> -->
                 <img src="content/blue-3.png">
             </a-assets>
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
             <!-- 依序放置要呈現的內容 -->
-            <a-entity mindar-image-target="targetIndex: 0" class="ar-target" data-color="cyan"
-                data-content="content/red-1.jpg"></a-entity>
-            <a-entity mindar-image-target="targetIndex: 1" class="ar-target" data-color="magenta"
-                data-content="content/green-2.png"></a-entity>
-            <a-entity mindar-image-target="targetIndex: 2" class="ar-target" data-color="yellow"
-                data-content="content/blue-3.png"></a-entity>
-            <!-- <a-entity mindar-image-target="targetIndex: 0">
-                    <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-                    <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel" animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-gltf-model>
-            </a-entity> -->
+            <a-entity mindar-image-target="targetIndex: 0" class="ar-target"
+                data-content="content/red-1.jpg" data-color="red"></a-entity>
+            <a-entity mindar-image-target="targetIndex: 1" class="ar-target"
+                data-content="content/green-2.png" data-color="green"></a-entity>
+            <a-entity mindar-image-target="targetIndex: 2" class="ar-target"
+                data-content="content/blue-3.png" data-color="blue"></a-entity>
         </a-scene>
+        
     </main>
     <!-- Bootstrap JS Bundle (含 Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

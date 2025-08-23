@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const arFilterOverlay = document.getElementById('ar-filter-overlay');
     const switchFilterButton = document.getElementById('switch-filter-button');
 
-    // 內容播放器相關
+    // content-player
     const contentPlayer = document.getElementById('content-player');
     const videoPlayer = document.getElementById('video-player');
     const imagePlayer = document.getElementById('image-player');
@@ -25,39 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeContentButton = document.getElementById('close-content-button');
 
     // --- 狀態變數 ---
-    let selectedColor = null; // 用來儲存用戶選擇的濾鏡顏色
-
-    // --- 資料對應關係 ---
-    const colorMapping = {
-        red: 'cyan',      // 紅色 > 青色
-        green: 'magenta', // 綠色 > 洋紅色
-        blue: 'yellow'    // 藍色 > 黃色
-    };
+    let selectedColor = null; // 只用於濾鏡顏色切換
 
     // 啟動 AR 的函式
     const activateAR = (color) => {
-        selectedColor = color; // 記錄當前選擇的顏色
-        colorSelectModal.hide(); // 使用 Bootstrap 的方法隱藏顏色選擇 Modal
-        scanUi.classList.remove('hidden'); // 顯示 AR 掃描介面
-
-        // 根據選擇的顏色，設定 AR 介面的濾鏡疊加層顏色
+        selectedColor = color;
+        colorSelectModal.hide();
+        scanUi.classList.remove('hidden');
         const colors = { red: 'rgba(255,0,0,0.5)', green: 'rgba(0,255,0,0.5)', blue: 'rgba(0,0,255,0.5)' };
         arFilterOverlay.style.backgroundColor = colors[color] || 'transparent';
-
-        // 正式啟動 MindAR 的掃描系統
         arScene.systems['mindar-image-system'].start();
     };
 
     // 播放內容的函式
     const playContent = (src) => {
-        arScene.systems['mindar-image-system'].stop(); // 暫停 AR 掃描，節省效能
-        contentPlayer.classList.remove('hidden'); // 顯示內容播放器
-
-        // 先隱藏所有內容類型，進行初始化
+        arScene.systems['mindar-image-system'].stop();
+        contentPlayer.classList.remove('hidden');
         videoPlayer.classList.add('hidden');
         imagePlayer.classList.add('hidden');
         audioVisualizer.classList.add('hidden');
-
         if (src.endsWith('.mp4')) {
             videoPlayer.classList.remove('hidden');
             videoPlayer.src = src;
@@ -71,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else {
             imagePlayer.classList.remove('hidden');
             imagePlayer.src = src;
+            console.log('顯示圖片:', src);
         }
     };
 
@@ -83,12 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 為每個目標新增事件監聽器，當 MindAR 找到它時就會觸發
         target.addEventListener('targetFound', () => {
-            console.log('targetFound:', targetColor, contentSrc, selectedColor);
-            // 檢查當前選擇的濾鏡顏色，是否能看到這個目標
-            if (colorMapping[selectedColor] === targetColor) {
-                console.log(`匹配成功！使用者使用 ${selectedColor} 濾鏡找到了 ${targetColor} 目標。`);
-                playContent(contentSrc); // 播放對應的內容
-            }
+            console.log('targetFound:', targetColor, contentSrc);
+            playContent(contentSrc);
         });
     });
 
@@ -110,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentIntroPage++;
                 showIntroPage(currentIntroPage);
             } else {
-                // 最後一頁，隱藏 intro-container，顯示顏色選擇 Modal
+                // 最後一頁，隱藏 intro-container，顯示 Bootstrap Modal
                 introContainer.classList.add('hidden');
                 colorSelectModal.show();
             }
         });
     });
 
-    // 顏色選擇 Modal 裡的按鈕
+    // Bootstrap Modal 裡的按鈕
     document.querySelectorAll('#colorSelectModal .btn').forEach(button => {
         button.addEventListener('click', (event) => {
             const color = event.target.id.split('-')[1]; // 從按鈕 ID 中提取顏色
@@ -142,6 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
     switchFilterButton.addEventListener('click', () => {
         arScene.systems['mindar-image-system'].stop(); // 暫停掃描
         scanUi.classList.add('hidden'); // 隱藏掃描介面
-        colorSelectModal.show(); // 重新顯示顏色選擇 Modal
+        colorSelectModal.show(); // 重新顯示 Bootstrap Modal
     });
 });

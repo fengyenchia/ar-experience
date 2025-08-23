@@ -24,6 +24,13 @@
     color: white;
 }
 
+html, body {
+overflow: hidden;
+background: var(--dark-black);
+/* height: 50vh; */
+z-index: 0;
+}
+
 h1, h2, h3, h4 {
     font-family: "Mozilla Headline", "Ubuntu", "IBM Plex Sans JP";
     line-height: 1.4;
@@ -47,7 +54,7 @@ h1, h2, h3, h4 {
 
 .intro .intro-container {
     background-color: var(--dark-black);
-    z-index: 100;
+    z-index: 60;
 }
 
 .intro-page .intro-page-text {
@@ -84,11 +91,11 @@ h1, h2, h3, h4 {
 
 /* Bootstrap Modal */
 .modal-backdrop {
-    z-index: 30;
+    z-index: 70;
 }
 
 .modal {
-    z-index: 31;
+    z-index: 71;
 }
 
 .selection-box {
@@ -110,15 +117,15 @@ h1, h2, h3, h4 {
     color: var(--light-black);
 }
 
-/* --- AR-scanning --- */
+/* --- AR-colorful-filter --- */
 #scan-ui {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 10;
-    pointer-events: none;
+    z-index: 20;
+    /* pointer-events: none; */
 }
 
 #ar-filter-overlay {
@@ -127,7 +134,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 11;
+    z-index: 30;
     opacity: 0.3;
 }
 
@@ -136,15 +143,18 @@ h1, h2, h3, h4 {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    pointer-events: auto;
-    border: 2px solid var(--dark-black);
+    pointer-events: auto !important;
+    z-index: 35;
+    color: white;
+    border: 2px solid white;
     font-weight: 600;
     font-family: "Noto Sans", "Google Sans Code";
 }
 
 #switch-filter-button:hover {
-    background-color: var(--dark-black);
-    color: white;
+    background-color: white;
+    color: var(--dark-black);
+    z-index: 36;
 }
 
 /* --- content-player --- */
@@ -155,7 +165,7 @@ h1, h2, h3, h4 {
     width: 100vw;
     height: 100vh;
     background: var(--dark-black);
-    z-index: 20;
+    z-index: 40;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +202,7 @@ h1, h2, h3, h4 {
     color: white;
     cursor: pointer;
     text-shadow: 0 0 5px var(--dark-black);
-    z-index: 13;
+    z-index: 41;
 }
 
 /* A-Frame AR 場景 */
@@ -202,12 +212,38 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
+    z-index: 10;
+    background: transparent !important;
 }
 
-/* MindAR UI Overlay */
+/* MindAR UI Overlay */ 
+.mindar-ui-overlay,
+.mindar-ui-overlay.mindar-ui-scanning,
+.mindar-ui-overlay.mindar-ui-loading,
+.mindar-ui-overlay.mindar-ui-compatibility,
+.mindar-ui-scanning,
+.mindar-ui-loading,
+.mindar-ui-compatibility {
+  background: transparent !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+  border: none !important;
+  z-index: 2 !important;
+}
 
-/* .mindar-ui-overlay {
-    position: absolute;
-    z-index: 999;
-} */
+.mindar-ui-loading,
+.mindar-ui-compatibility {
+  display: none !important;
+}
+
+
+
+body > video[playsinline] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 10 !important;
+  object-fit: cover !important;
+}
