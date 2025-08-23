@@ -26,8 +26,7 @@
 
 html, body {
 overflow: hidden;
-background: var(--dark-black);
-/* height: 50vh; */
+background: transparent !important;
 z-index: 0;
 }
 
@@ -112,9 +111,9 @@ h1, h2, h3, h4 {
     border: 2px solid white;
 }
 
-.btn-three-theme:hover {
-    background-color: white;
-    color: var(--light-black);
+.btn-three-theme:active {
+    background-color: white !important;
+    color: var(--light-black) !important;
 }
 
 /* --- AR-colorful-filter --- */
