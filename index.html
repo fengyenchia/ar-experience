@@ -10,7 +10,7 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="ar-experience/assets/css/style.css" rel="stylesheet">
     <!-- MindAR -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/dist/mindar-image.prod.js"></script> -->
@@ -23,7 +23,7 @@
             <div class="intro-container row justify-content-center align-items-center vh-100" id="intro-container">
                 <div class="intro-page col w-100" id="intro-page-0">
                     <div class="intro-page-content">
-                        <img class="computer img-fluid" src="assets/images/computer.svg" alt="Computer">
+                        <img class="computer img-fluid" src="ar-experience/assets/images/computer.svg" alt="Computer">
                         <div class="intro-page-text p-5 w-100 text-center">
                             <h3 class="intro-page-start">在混亂的資訊中...<br>你可以選擇想要<br>看見什麼</h3>
                         </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="intro-page hidden col w-100" id="intro-page-1">
                     <div class="intro-page-content">
-                        <img class="computer img-fluid" src="assets/images/computer.svg" alt="Computer">
+                        <img class="computer img-fluid" src="ar-experience/assets/images/computer.svg" alt="Computer">
                         <div class="intro-page-text p-5 w-100 text-center">
                             <h3 class="intro-page-text-h3 w-100 pb-5">在資訊過曝的世界中<br>重要真相往往被層層堆疊</h3>
                             <p class="intro-page-text-p mt-3 px-2">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="intro-page hidden col w-100" id="intro-page-2">
                     <div class="intro-page-content">
-                        <img class="computer w-100" src="assets/images/computer.svg" alt="Computer">
+                        <img class="computer w-100" src="ar-experience/assets/images/computer.svg" alt="Computer">
                         <div class="intro-page-text p-5 w-100 text-center">
                             <h3 class="intro-page-text-h3 w-100 pb-5">我們邀請你成為一位「檔案員」<br>進入這個混亂的檔案室裡</h3>
                             <p class="intro-page-text-p mt-3 px-2">
@@ -106,26 +106,26 @@
 
         <!-- A-Frame -->
          <section class="A-Frame">
-            <a-scene id="ar-scene" mindar-image="imageTargetSrc: ./targets.mind;" 
+            <a-scene id="ar-scene" mindar-image="imageTargetSrc: ar-experience/targets.mind;" 
                 color-space="sRGB"
                 renderer="colorManagement: true, physicallyCorrectLights" 
                 vr-mode-ui="enabled: false"
                 device-orientation-permission-ui="enabled: false">
                 <!-- 預先載入 -->
                 <a-assets>
-                    <img src="content/red-1.jpg">
-                    <img src="content/audio.mp3">
-                    <!-- <video src="content/blue-1.mp4" autoplay muted loop playsinline></video> -->
-                    <img src="content/video.mp4">
+                    <img src="ar-experience/content/red-1.jpg">
+                    <audio src="ar-experience/content/audio.mp3"></audio>
+                    <!-- <video src="ar-experience/content/blue-1.mp4" autoplay muted loop playsinline></video> -->
+                    <video src="ar-experience/content/video.mp4">
                 </a-assets>
                 <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
                 <!-- 依序放置要呈現的內容 -->
                 <a-entity mindar-image-target="targetIndex: 0" class="ar-target"
-                    data-content="content/red-1.jpg" data-color="red"></a-entity>
+                    data-content="ar-experience/content/red-1.jpg" data-color="red"></a-entity>
                 <a-entity mindar-image-target="targetIndex: 1" class="ar-target"
-                    data-content="content/audio.mp3" data-color="green"></a-entity>
+                    data-content="ar-experience/content/audio.mp3" data-color="green"></a-entity>
                 <a-entity mindar-image-target="targetIndex: 2" class="ar-target"
-                    data-content="content/video.mp4" data-color="blue"></a-entity>
+                    data-content="ar-experience/content/video.mp4" data-color="blue"></a-entity>
             </a-scene>
         </section>
 
@@ -133,7 +133,7 @@
     <!-- Bootstrap JS Bundle (含 Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="ar-experience/assets/js/script.js"></script>
 </body>
 
 </html>

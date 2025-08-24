@@ -176,11 +176,6 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-/* #reward-content {
-    max-width: 100vh;
-    max-height: 100%;
-} */
-
 #audio-visualizer i {
     animation: pulse 1.5s ease-in-out infinite;
 }
@@ -240,8 +235,6 @@ h1, h2, h3, h4 {
 .mindar-ui-compatibility {
   display: none !important;
 }
-
-
 
 body > video[playsinline] {
   position: fixed !important;
