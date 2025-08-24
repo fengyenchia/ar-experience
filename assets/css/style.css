@@ -250,25 +250,17 @@ h1, h2, h3, h4 {
 .mindar-ui-overlay,
 .mindar-ui-overlay.mindar-ui-scanning,
 .mindar-ui-overlay.mindar-ui-loading,
-.mindar-ui-overlay.mindar-ui-compatibility,
-.mindar-ui-scanning,
-.mindar-ui-loading,
-.mindar-ui-compatibility {
-  background: transparent !important;
+.mindar-ui-overlay.mindar-ui-compatibility {
+  /* background: transparent !important; */
   opacity: 0.8 !important;
   box-shadow: none !important;
   border: none !important;
   z-index: 2 !important;
 }
 
-.mindar-ui-loading,
-.mindar-ui-compatibility {
+/* .mindar-ui-loading, .mindar-ui-compatibility {
   display: none !important;
-}
-
-.mindar-ui-scanning .scanning .inner {
-    background-image: url("assets/images/computer.svg");
-}
+} */
 
 /* MindAR/A-Frame video(上下掃描畫面) */
 a-scene video,
