@@ -141,7 +141,7 @@ h1, h2, h3, h4 {
 
 #switch-filter-button {
     position: absolute;
-    bottom: 30px;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     pointer-events: auto !important;
