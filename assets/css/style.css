@@ -20,7 +20,7 @@
     padding: 0;
     position: relative;
     box-sizing: border-box;
-    font-family: "Noto Sans", "Ubuntu", "IBM Plex Sans JP";
+    font-family: "Noto Sans", "Ubuntu";
     color: white;
 }
 
@@ -31,10 +31,10 @@ z-index: 0;
 }
 
 h1, h2, h3, h4 {
-    font-family: "Mozilla Headline", "Ubuntu", "IBM Plex Sans JP";
+    font-family: "Noto Sans", "Ubuntu";
     line-height: 1.4;
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 ::selection {
