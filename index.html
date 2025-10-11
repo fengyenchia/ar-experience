@@ -68,12 +68,12 @@
                         <div class="modal-body text-center fw-bold">
                             <h4 class="mb-4">請選擇欲解鎖的主題...</h4>
                             <div class="selection-button d-grid gap-4">
-                                <button class="btn btn-lg btn-three-theme" type="button" id="btn-red"><i
-                                        class="bi bi-bank"></i> 政治與公共事務 <i class="bi bi-bank"></i></button>
-                                <button class="btn btn-lg btn-three-theme" type="button" id="btn-green"><i
-                                        class="bi bi-graph-up"></i> 經濟與商業 <i class="bi bi-graph-up"></i></button>
-                                <button class="btn btn-lg btn-three-theme" type="button" id="btn-blue"><i
-                                        class="bi bi-controller"></i> 社會與文化 <i class="bi bi-controller"></i></button>
+                                <button class="btn btn-lg btn-three-theme" type="button" id="btn-red">
+                                        <i class="bi bi-bank"></i> 政治與公共事務 <i class="bi bi-bank"></i></button>
+                                <button class="btn btn-lg btn-three-theme" type="button" id="btn-green">
+                                        <i class="bi bi-graph-up"></i> 經濟與商業 <i class="bi bi-graph-up"></i></button>
+                                <button class="btn btn-lg btn-three-theme" type="button" id="btn-blue">
+                                        <i class="bi bi-people"></i> 社會與文化 <i class="bi bi-people"></i></button>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
 
         <!-- A-Frame -->
         <section class="A-Frame">
-            <a-scene id="ar-scene" mindar-image="imageTargetSrc: ./targets.mind;"
+            <a-scene id="ar-scene" mindar-image="imageTargetSrc: ./targets_test.mind;"
                 color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
                 device-orientation-permission-ui="enabled: false">
                 <!-- 預先載入 -->
@@ -120,9 +120,21 @@
                 <a-entity mindar-image-target="targetIndex: 0" class="ar-target" data-content="content/red-1.png"
                     data-color="red"></a-entity>
                 <a-entity mindar-image-target="targetIndex: 1" class="ar-target" data-content="content/audio.mp3"
-                    data-color="green"></a-entity>
+                data-color="red"></a-entity>
                 <a-entity mindar-image-target="targetIndex: 2" class="ar-target" data-content="content/video.mp4"
+                data-color="red"></a-entity>
+                <a-entity mindar-image-target="targetIndex: 3" class="ar-target" data-content="content/red-1.png"
+                    data-color="green"></a-entity>
+                <a-entity mindar-image-target="targetIndex: 4" class="ar-target" data-content="content/audio.mp3"
+                data-color="green"></a-entity>
+                <a-entity mindar-image-target="targetIndex: 5" class="ar-target" data-content="content/video.mp4"
+                data-color="green"></a-entity>
+                <a-entity mindar-image-target="targetIndex: 6" class="ar-target" data-content="content/red-1.png"
                     data-color="blue"></a-entity>
+                <a-entity mindar-image-target="targetIndex: 7" class="ar-target" data-content="content/audio.mp3"
+                data-color="blue"></a-entity>
+                <a-entity mindar-image-target="targetIndex: 8" class="ar-target" data-content="content/video.mp4"
+                data-color="blue"></a-entity>
             </a-scene>
         </section>
 
