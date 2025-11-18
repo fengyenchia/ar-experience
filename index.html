@@ -94,7 +94,7 @@
         <section class="main-content-player">
             <div id="scan-tip" class="scan-tip hidden"></div> <!-- 濾鏡不符合的提示訊息 -->
             <div id="content-player" class="content-player hidden">
-                <video id="video-player" class="video-player hidden" autoplay muted loop playsinline></video>
+                <video id="video-player" class="video-player hidden" autoplay loop playsinline></video> <!--要關聲音就在autoplay後加上 muted-->
                 <img id="image-player" class="image-player hidden" />
                 <audio id="audio-player" class="audio-player hidden"></audio>
                 <div id="audio-visualizer" class="audio-visualizer hidden">
@@ -112,29 +112,33 @@
                 device-orientation-permission-ui="enabled: false">
                 <!-- 預先載入 -->
                 <a-assets>
-                    <img src="content/red-1.png">
-                    <audio src="content/audio.mp3"></audio>
-                    <!-- <video src="content/blue-1.mp4" autoplay muted loop playsinline></video> -->
-                    <video src="content/video.mp4">
+                    <video id="R1" src="content/finalContents/R1.mp4" autoplay muted loop playsinline></video>
+                    <img src="content/finalContents/R2.png">
+                    <img src="content/finalContents/R3.png">
+                    <img src="content/finalContents/G1.jpg">
+                    <img src="content/finalContents/G2.JPG">
+                    <img src="content/finalContents/B1.jpg">
+                    <img src="content/finalContents/B3.jpg">
+                    <!-- <audio src="content/audio.mp3"></audio> -->
                 </a-assets>
-                <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-                <a-entity mindar-image-target="targetIndex: 0" class="ar-target" data-content="content/red-1.png"
+                <a-camera position="0 0 0" look-controls="enabled: false"></a-camera> <!-- 還差 g3 b2 -->
+                <a-entity mindar-image-target="targetIndex: 0" class="ar-target" data-content="content/finalContents/R1.mp4"
                     data-color="red"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 1" class="ar-target" data-content="content/audio.mp3"
+                <a-entity mindar-image-target="targetIndex: 1" class="ar-target" data-content="content/finalContents/R2.png"
                 data-color="red"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 2" class="ar-target" data-content="content/video.mp4"
+                <a-entity mindar-image-target="targetIndex: 2" class="ar-target" data-content="content/finalContents/R3.png"
                 data-color="red"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 3" class="ar-target" data-content="content/red-1.png"
+                <a-entity mindar-image-target="targetIndex: 3" class="ar-target" data-content="content/finalContents/G1.jpg"
                     data-color="green"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 4" class="ar-target" data-content="content/audio.mp3"
+                <a-entity mindar-image-target="targetIndex: 4" class="ar-target" data-content="content/finalContents/G2.JPG"
                 data-color="green"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 5" class="ar-target" data-content="content/video.mp4"
+                <a-entity mindar-image-target="targetIndex: 5" class="ar-target" data-content="content/finalContents/G2.JPG"
                 data-color="green"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 6" class="ar-target" data-content="content/red-1.png"
+                <a-entity mindar-image-target="targetIndex: 6" class="ar-target" data-content="content/finalContents/B1.jpg"
                     data-color="blue"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 7" class="ar-target" data-content="content/audio.mp3"
+                <a-entity mindar-image-target="targetIndex: 7" class="ar-target" data-content="content/finalContents/B3.jpg"
                 data-color="blue"></a-entity>
-                <a-entity mindar-image-target="targetIndex: 8" class="ar-target" data-content="content/video.mp4"
+                <a-entity mindar-image-target="targetIndex: 8" class="ar-target" data-content="content/finalContents/B3.jpg"
                 data-color="blue"></a-entity>
             </a-scene>
         </section>
